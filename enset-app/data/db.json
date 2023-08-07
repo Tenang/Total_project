@@ -35,6 +35,12 @@
       "price": "90000",
       "checked": true,
       "id": 7
+    },
+    {
+      "name": "des",
+      "price": "650",
+      "checked": "",
+      "id": 8
     }
   ]
 }
