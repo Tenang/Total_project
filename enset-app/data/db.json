@@ -13,12 +13,6 @@
       "id": 3
     },
     {
-      "name": "laptop",
-      "price": "200000",
-      "checked": false,
-      "id": 4
-    },
-    {
       "name": "Ordinateur",
       "price": "650000",
       "checked": false,
@@ -39,7 +33,7 @@
     {
       "name": "des",
       "price": "650",
-      "checked": "",
+      "checked": true,
       "id": 8
     }
   ]
