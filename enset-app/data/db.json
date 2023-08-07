@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "ordinateur",
+      "price": 254000,
+      "checked": true
+    },
+    {
+      "name": "laptop",
+      "price": "200000",
+      "checked": false,
+      "id": 3
+    },
+    {
+      "name": "laptop",
+      "price": "200000",
+      "checked": false,
+      "id": 4
+    },
+    {
+      "name": "Ordinateur",
+      "price": "650000",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "name": "Fix",
+      "price": "9000000",
+      "checked": false,
+      "id": 6
+    },
+    {
+      "name": "telephone",
+      "price": "90000",
+      "checked": true,
+      "id": 7
+    }
+  ]
+}
