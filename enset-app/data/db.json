@@ -4,7 +4,7 @@
       "id": 2,
       "name": "ordinateur",
       "price": 254000,
-      "checked": true
+      "checked": false
     },
     {
       "name": "laptop",
@@ -27,14 +27,20 @@
     {
       "name": "telephone",
       "price": "90000",
-      "checked": true,
+      "checked": false,
       "id": 7
     },
     {
       "name": "des",
       "price": "650",
-      "checked": true,
+      "checked": false,
       "id": 8
+    },
+    {
+      "name": "souris",
+      "price": "15000",
+      "checked": true,
+      "id": 9
     }
   ]
 }

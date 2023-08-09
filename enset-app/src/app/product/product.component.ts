@@ -14,6 +14,9 @@ export class ProductComponent implements OnInit{
    
   public products : Array<Product> =[];
   public keywork : string="";
+  totalpages:number=0;
+  pageSize: number=3;
+  currentPage:number=1
 
   constructor(private productservice:ProductService){
 
@@ -24,9 +27,17 @@ export class ProductComponent implements OnInit{
 
 
   getProducts(){
-    this.productservice.getProducts(1,3)
+    this.productservice.getProducts(this.currentPage,this.pageSize)
     .subscribe({
-      next: data=> this.products=data,
+      next: (resp)=> {
+        this.products=resp.body as Product[]
+        let totalProducts : number = parseInt(resp.headers.get('x-total-count')!);
+        this.totalpages=Math.floor(totalProducts/this.pageSize) 
+        if(this.totalpages%this.pageSize!=0){
+          this.totalpages+=1
+        }
+
+      } ,
       error: err=> {
         console.log(err);
         
@@ -34,7 +45,11 @@ export class ProductComponent implements OnInit{
 
     })
   }
- 
+  handleGotoPage(page : number){
+    this.currentPage=page;
+    this.getProducts(); 
+
+  }
   
 
   handleCheckProduct(product : Product){

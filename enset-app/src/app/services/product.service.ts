@@ -10,9 +10,9 @@ export class ProductService {
 
   constructor( private http : HttpClient) { }
 
-  public getProducts(page : number=1, size:number=6): Observable<Array<Product>>{
+  public getProducts(page : number=1, size:number=6){
 
-    return this.http.get<Array<Product>>(`http://localhost:3000/products?_page=${page}&_limit=${size}`)
+    return this.http.get(`http://localhost:3000/products?_page=${page}&_limit=${size}`, {observe:'response'})
   }
 
   public CheckProduct(product : Product): Observable<Product>{
