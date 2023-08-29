@@ -10,9 +10,9 @@ export class ProductService {
 
   constructor( private http : HttpClient) { }
 
-  public getProducts(page : number=1, size:number=6){
+  public getProducts(keywork : string="",page : number=1, size:number=6){
 
-    return this.http.get(`http://localhost:3000/products?_page=${page}&_limit=${size}`, {observe:'response'})
+    return this.http.get(`http://localhost:3000/products?name_like=${keywork}&_page=${page}&_limit=${size}`, {observe:'response'})
   }
 
   public CheckProduct(product : Product): Observable<Product>{
@@ -32,9 +32,9 @@ saveProduct(product: Product): Observable<Product>{
 
 }
 
-  public searchProduct(keywork : string): Observable<Array<Product>>{
+ /*  public searchProduct(keywork : string, page:number, size:number): Observable<Array<Product>>{
 
-    return this.http.get<Array<Product>>(`http://localhost:3000/products?name_like=${keywork}`)
-  }
+    return this.http.get<Array<Product>>(`http://localhost:3000/products?name_like=${keywork}&_page=${page}&_limit=${size}`)
+  } */
 }
 

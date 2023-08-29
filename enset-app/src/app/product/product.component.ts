@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit{
 
 
   getProducts(){
-    this.productservice.getProducts(this.currentPage,this.pageSize)
+    this.productservice.getProducts(this.keywork,this.currentPage,this.pageSize)
     .subscribe({
       next: (resp)=> {
         this.products=resp.body as Product[]
@@ -69,12 +69,14 @@ export class ProductComponent implements OnInit{
     })
   }
 
-  searchProduct(){
+ /*  searchProduct(){
 
-    this.productservice.searchProduct(this.keywork).subscribe({
+    this.currentPage=1;
+    this.totalpages=0;
+    this.productservice.searchProduct(this.keywork, this.currentPage,this.pageSize).subscribe({
       next : value => {
             this.products=value;
       }
     })
-  }
+  } */
 }
