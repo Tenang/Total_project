@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
@@ -9,8 +10,10 @@ import { ProductService } from '../services/product.service';
 })
 export class EditProductComponent implements OnInit {
   
+
+  productformGroup! : FormGroup
   productId! : number;
-  constructor( private activedRoute : ActivatedRoute, private productService : ProductService){
+  constructor( private activedRoute : ActivatedRoute, private productService : ProductService, private fb:FormBuilder){
     
   }
 
@@ -18,7 +21,24 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit(): void {
    this.productId=this.activedRoute.snapshot.params['id'];
-  this.productService.getProductById(this.productId)
+  this.productService.getProductById(this.productId).subscribe({
+    next: (product)=>{
+
+      this.productformGroup=this.fb.group({
+        id : this.fb.control(product.id),
+        names : this.fb.control(product.name),
+        price : this.fb.control(product.price,[Validators.min(100)]),
+        checked : this.fb.control(product.checked),
+      })
+    },
+    error: err=> {
+      console.log(err)
+    }
+  })
+  }
+
+  updateProduct(){
+
   }
 
 

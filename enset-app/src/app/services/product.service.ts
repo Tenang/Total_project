@@ -7,6 +7,7 @@ import { Product } from '../model/product.model';
   providedIn: 'root'
 })
 export class ProductService {
+ 
 
   constructor( private http : HttpClient) { }
 
@@ -30,6 +31,12 @@ saveProduct(product: Product): Observable<Product>{
   return this.http.post<Product>(`http://localhost:3000/products`,
    product );  
  
+}
+
+getProductById(productId: number) : Observable<Product> {
+
+  return this.http.get<Product>(`http://localhost:3000/products/${productId}`)
+
 }
 
  /*  public searchProduct(keywork : string, page:number, size:number): Observable<Array<Product>>{

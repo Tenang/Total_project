@@ -4,12 +4,12 @@
       "id": 2,
       "name": "ordinateur",
       "price": 254000,
-      "checked": false
+      "checked": true
     },
     {
       "name": "laptop",
       "price": "200000",
-      "checked": false,
+      "checked": true,
       "id": 3
     },
     {

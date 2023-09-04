@@ -5,7 +5,21 @@
 
         </div>
         <div class="card-body">
-
+            <form [formGroup]="productformGroup" *ngIf="productformGroup" (ngSubmit)="updateProduct()">
+                <div class="mb-6">
+                    <label for="form-label">Name : </label>
+                    <input class="form-control" formControlName="names">
+                </div>
+                <div class="mb-6">
+                    <label for="form-label">Price : </label>
+                    <input class="form-control" formControlName="price">
+                </div>
+                <div class="mb-6">
+                    <label for="form-label">Checked : </label>
+                    <input class="form-check-input" formControlName="checked" type="checkbox">
+                </div>
+                <button [disabled]="productformGroup.invalid" class="btn btn-outline-success">Save</button>
+            </form>
         </div>
     </div>
 
