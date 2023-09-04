@@ -10,7 +10,7 @@ export class ProductService {
 
   constructor( private http : HttpClient) { }
 
-  public getProducts(keywork : string="",page : number=1, size:number=6){
+  public searchProducts(keywork : string="",page : number=1, size:number=6){
 
     return this.http.get(`http://localhost:3000/products?name_like=${keywork}&_page=${page}&_limit=${size}`, {observe:'response'})
   }
@@ -29,7 +29,7 @@ export class ProductService {
 saveProduct(product: Product): Observable<Product>{
   return this.http.post<Product>(`http://localhost:3000/products`,
    product );  
-
+ 
 }
 
  /*  public searchProduct(keywork : string, page:number, size:number): Observable<Array<Product>>{

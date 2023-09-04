@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product.model';
 import { ProductService } from '../services/product.service';
@@ -18,16 +19,16 @@ export class ProductComponent implements OnInit{
   pageSize: number=3;
   currentPage:number=1
 
-  constructor(private productservice:ProductService){
+  constructor(private productservice:ProductService, private router:Router){
 
   }
   ngOnInit(): void {
-   this.getProducts()
+   this.searchProducts()
   }
 
 
-  getProducts(){
-    this.productservice.getProducts(this.keywork,this.currentPage,this.pageSize)
+  searchProducts(){
+    this.productservice.searchProducts(this.keywork,this.currentPage,this.pageSize)
     .subscribe({
       next: (resp)=> {
         this.products=resp.body as Product[]
@@ -47,7 +48,7 @@ export class ProductComponent implements OnInit{
   }
   handleGotoPage(page : number){
     this.currentPage=page;
-    this.getProducts(); 
+    this.searchProducts(); 
 
   }
   
@@ -69,13 +70,17 @@ export class ProductComponent implements OnInit{
     })
   }
 
+  handleEditProduct(product: Product){
+this.router.navigateByUrl(`/editProduct/${product.id}`)
+    
+  }
  /*  searchProduct(){
 
     this.currentPage=1;
     this.totalpages=0;
     this.productservice.searchProduct(this.keywork, this.currentPage,this.pageSize).subscribe({
       next : value => {
-            this.products=value;
+            this.products=value; 
       }
     })
   } */

@@ -9,13 +9,15 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './services/product.service';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NewProductComponent,
-    ProductComponent
+    ProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
