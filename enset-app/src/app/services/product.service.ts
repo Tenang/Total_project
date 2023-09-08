@@ -7,6 +7,7 @@ import { Product } from '../model/product.model';
   providedIn: 'root'
 })
 export class ProductService {
+
  
 
   constructor( private http : HttpClient) { }
@@ -27,16 +28,19 @@ export class ProductService {
     return this.http.delete<any>(`http://localhost:3000/products/${product.id}`);
 }
 
-saveProduct(product: Product): Observable<Product>{
-  return this.http.post<Product>(`http://localhost:3000/products`,
-   product );  
+  public saveProduct(product: Product): Observable<Product>{
+  return this.http.post<Product>(`http://localhost:3000/products`,product );  
  
 }
 
-getProductById(productId: number) : Observable<Product> {
+  public getProductById(productId: number) : Observable<Product> {
 
   return this.http.get<Product>(`http://localhost:3000/products/${productId}`)
 
+}
+
+  public updateProduct(product: Product): Observable<Product>   {
+  return this.http.put<Product>(`http://localhost:3000/products/${product.id}`,product)
 }
 
  /*  public searchProduct(keywork : string, page:number, size:number): Observable<Array<Product>>{

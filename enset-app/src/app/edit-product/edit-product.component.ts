@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../model/product.model';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -21,8 +22,8 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit(): void {
    this.productId=this.activedRoute.snapshot.params['id'];
-  this.productService.getProductById(this.productId).subscribe({
-    next: (product)=>{
+   this.productService.getProductById(this.productId).subscribe({
+      next : (product)=>{
 
       this.productformGroup=this.fb.group({
         id : this.fb.control(product.id),
@@ -39,6 +40,15 @@ export class EditProductComponent implements OnInit {
 
   updateProduct(){
 
+    let product: Product=this.productformGroup.value;
+
+    this.productService.updateProduct(product).subscribe({
+
+      next : data => {
+        alert(JSON.stringify(data))
+      }
+
+    })
   }
 
 

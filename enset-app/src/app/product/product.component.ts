@@ -55,6 +55,7 @@ export class ProductComponent implements OnInit{
 
   handleCheckProduct(product : Product){
     this.productservice.CheckProduct(product).subscribe({
+      
       next: UpdatedProduct=> {
         product.checked=!product.checked
       }

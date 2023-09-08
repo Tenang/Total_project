@@ -2,27 +2,27 @@
   "products": [
     {
       "id": 2,
-      "name": "ordinateur",
-      "price": 254000,
+      "names": "ordinateur",
+      "price": "200",
       "checked": true
     },
     {
-      "name": "laptop",
+      "id": 3,
+      "names": "laptopsds",
       "price": "200000",
-      "checked": true,
-      "id": 3
+      "checked": true
     },
     {
-      "name": "Ordinateur",
+      "id": 5,
+      "names": "OrdinateurSSSSS",
       "price": "650000",
-      "checked": false,
-      "id": 5
+      "checked": false
     },
     {
-      "name": "Fix",
-      "price": "9000000",
-      "checked": false,
-      "id": 6
+      "id": 6,
+      "names": "Fixes",
+      "price": "900800",
+      "checked": true
     },
     {
       "name": "telephone",
@@ -31,16 +31,16 @@
       "id": 7
     },
     {
-      "name": "des",
-      "price": "650",
-      "checked": false,
-      "id": 8
+      "id": 8,
+      "names": "description",
+      "price": "650 000",
+      "checked": false
     },
     {
-      "name": "souris",
+      "id": 9,
+      "names": "souris BT",
       "price": "15000",
-      "checked": true,
-      "id": 9
+      "checked": true
     },
     {
       "name": "telephone XR ",
@@ -121,10 +121,10 @@
       "id": 10
     },
     {
-      "name": "telephone XR ",
-      "price": "2000000",
+      "name": "Lunettes",
+      "price": "450000",
       "checked": true,
-      "id": 10
+      "id": 11
     }
   ]
 }

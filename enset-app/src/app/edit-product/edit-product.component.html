@@ -4,8 +4,8 @@
             Produit Id={{productId}}
 
         </div>
-        <div class="card-body">
-            <form [formGroup]="productformGroup" *ngIf="productformGroup" (ngSubmit)="updateProduct()">
+        <div class="card-body" *ngIf="productformGroup">
+            <form [formGroup]="productformGroup" (ngSubmit)="updateProduct()">
                 <div class="mb-6">
                     <label for="form-label">Name : </label>
                     <input class="form-control" formControlName="names">
