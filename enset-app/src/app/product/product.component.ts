@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product.model';
+import { AppStateService } from '../services/app-state.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -13,13 +14,9 @@ import { ProductService } from '../services/product.service';
 export class ProductComponent implements OnInit{
 
    
-  public products : Array<Product> =[];
-  public keywork : string="";
-  totalpages:number=0;
-  pageSize: number=3;
-  currentPage:number=1
 
-  constructor(private productservice:ProductService, private router:Router){
+
+  constructor(private productservice:ProductService, private router:Router, public appstateserv : AppStateService){
 
   }
   ngOnInit(): void {
@@ -28,14 +25,17 @@ export class ProductComponent implements OnInit{
 
 
   searchProducts(){
-    this.productservice.searchProducts(this.keywork,this.currentPage,this.pageSize)
+    this.productservice.searchProducts(this.appstateserv.productState.keywork,this.appstateserv.productState.currentPage,this.appstateserv.productState.pageSize)
     .subscribe({
       next: (resp)=> {
-        this.products=resp.body as Product[]
+        this.appstateserv.productState.products=resp.body as Product[]
         let totalProducts : number = parseInt(resp.headers.get('x-total-count')!);
-        this.totalpages=Math.floor(totalProducts/this.pageSize) 
-        if(this.totalpages%this.pageSize!=0){
-          this.totalpages+=1
+        
+        this.appstateserv.productState.totalProduct=totalProducts;
+        console.log(this.appstateserv.productState.totalProduct);
+        this.appstateserv.productState.totalpages=Math.floor(totalProducts/this.appstateserv.productState.pageSize) 
+        if(this.appstateserv.productState.totalpages%this.appstateserv.productState.pageSize!=0){
+          this.appstateserv.productState.totalpages+=1
         }
 
       } ,
@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit{
     })
   }
   handleGotoPage(page : number){
-    this.currentPage=page;
+    this.appstateserv.productState.currentPage=page;
     this.searchProducts(); 
 
   }
@@ -66,7 +66,8 @@ export class ProductComponent implements OnInit{
      if(confirm("Etes vous sure de ce que vous etes sur le point de faire?"))
     this.productservice.DeleteProduct(product).subscribe({
       next:value=> {
-          this.products=this.products.filter(p=>p.id!=product.id)
+         // this.appstateserv.productState.products=this.appstateserv.productState.products.filter((p:any)=>p.id!=product.id)
+          this.searchProducts()
       }
     })
   }

@@ -25,12 +25,6 @@
       "checked": true
     },
     {
-      "name": "telephone",
-      "price": "90000",
-      "checked": false,
-      "id": 7
-    },
-    {
       "id": 8,
       "names": "description",
       "price": "650 000",
@@ -41,30 +35,6 @@
       "names": "souris BT",
       "price": "15000",
       "checked": true
-    },
-    {
-      "name": "telephone XR ",
-      "price": "2000000",
-      "checked": true,
-      "id": 10
-    },
-    {
-      "name": "telephone XR ",
-      "price": "2000000",
-      "checked": true,
-      "id": 10
-    },
-    {
-      "name": "telephone XR ",
-      "price": "2000000",
-      "checked": true,
-      "id": 10
-    },
-    {
-      "name": "telephone XR ",
-      "price": "2000000",
-      "checked": true,
-      "id": 10
     },
     {
       "name": "telephone XR ",
