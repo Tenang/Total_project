@@ -11,6 +11,8 @@ import { ProductService } from './services/product.service';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AppErrorComponent } from './app-error/app-error.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NewProductComponent,
     ProductComponent,
     EditProductComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    AppErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,13 @@ export class AppStateService {
      totalpages:0,
      pageSize:3,
      currentPage:1,
-     totalProduct:0
+     totalProduct:0,
+     status:"LOADING",
+     errotMessage:""
   }
   constructor() { }
+   
+  public setProductState(state : any): void{
+    this.productState =  {...this.productState, ...state}
+  }
 }
