@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppErrorComponent } from './app-error/app-error.component';
+import { AppHttpInterceptor } from './services/app-http.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { AppErrorComponent } from './app-error/app-error.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,  
     FormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,
+  {provide : HTTP_INTERCEPTORS, useClass : AppHttpInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

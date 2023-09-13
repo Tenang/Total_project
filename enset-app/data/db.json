@@ -37,16 +37,22 @@
       "checked": true
     },
     {
-      "name": "Iphone 6",
+      "id": 10,
+      "names": "Iphone 11 Xr",
       "price": "800000",
-      "checked": false,
-      "id": 10
+      "checked": false
     },
     {
       "name": "samsung ",
       "price": "450000",
-      "checked": true,
+      "checked": false,
       "id": 11
+    },
+    {
+      "name": "Disque dur externe",
+      "price": "15000",
+      "checked": true,
+      "id": 12
     }
   ]
 }
