@@ -1,58 +1,62 @@
 {
-  "products": [
-    {
-      "id": 2,
-      "names": "ordinateur",
-      "price": "200",
-      "checked": true
-    },
-    {
-      "id": 3,
-      "names": "laptopsds",
-      "price": "200000",
-      "checked": true
-    },
-    {
-      "id": 5,
-      "names": "OrdinateurSSSSS",
-      "price": "650000",
-      "checked": false
-    },
-    {
-      "id": 6,
-      "names": "Fixes",
-      "price": "900800",
-      "checked": true
-    },
-    {
-      "id": 8,
-      "names": "description",
-      "price": "650 000",
-      "checked": false
-    },
-    {
-      "id": 9,
-      "names": "souris BT",
-      "price": "15000",
-      "checked": true
-    },
-    {
-      "id": 10,
-      "names": "Iphone 11 Xr",
-      "price": "800000",
-      "checked": false
-    },
-    {
-      "name": "samsung ",
-      "price": "450000",
-      "checked": false,
-      "id": 11
-    },
-    {
-      "name": "Disque dur externe",
-      "price": "15000",
-      "checked": true,
-      "id": 12
-    }
-  ]
+
+    "users": [
+        { "username": "user1", "password": "1234", "roles": ["USER"], "token": "jwt token" }
+    ],
+
+    "products": [{
+            "id": 2,
+            "names": "ordinateur",
+            "price": "200",
+            "checked": true
+        },
+        {
+            "id": 3,
+            "names": "laptopsds",
+            "price": "200000",
+            "checked": true
+        },
+        {
+            "id": 5,
+            "names": "OrdinateurSSSSS",
+            "price": "650000",
+            "checked": false
+        },
+        {
+            "id": 6,
+            "names": "Fixes",
+            "price": "900800",
+            "checked": true
+        },
+        {
+            "id": 8,
+            "names": "description",
+            "price": "650 000",
+            "checked": false
+        },
+        {
+            "id": 9,
+            "names": "souris BT",
+            "price": "15000",
+            "checked": true
+        },
+        {
+            "id": 10,
+            "names": "Iphone 11 Xr",
+            "price": "800000",
+            "checked": false
+        },
+        {
+            "name": "samsung ",
+            "price": "450000",
+            "checked": true,
+            "id": 11
+        },
+        {
+            "name": "Disque dur externe",
+            "price": "15000",
+            "checked": true,
+            "id": 12
+        }
+    ]
 }
