@@ -1,9 +1,27 @@
 {
 
-    "users": [
-        { "username": "user1", "password": "1234", "roles": ["USER"], "token": "jwt token" }
-    ],
+    "users": [{
+            "id": "user1",
+            "password": "MTIzNA==",
+            "roles": ["USER"],
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxhaG9zdDo4ODg4L2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImZpcnN0bmFtZSI6Ik1vaGFtZWQiLCJsYXN0bmFtZSI6IllvdXNzZmkiLCJlbWFpbCI6InRlbmFuZ0BnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIl19.qiX9fDqZ8tCCGxZTwdv0Bby4a_Jft5-vJ-XgozxHoJY"
+        },
+        {
+            "id": "user2",
+            "password": "1234",
+            "roles": ["USER"],
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxhaG9zdDo4ODg4L2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImZpcnN0bmFtZSI6Ik1vaGFtZWQiLCJsYXN0bmFtZSI6IllvdXNzZmkiLCJlbWFpbCI6InRlbmFuZ0BnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIl19.zgzYDsqUWrJ-JFimXXrdvSYj1DboxpRX94K1H8TKWDU"
+        },
+        {
+            "id": "admin",
+            "password": "MTIzNA==",
+            "roles": ["USER",
+                "ADMIN"
+            ],
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxhaG9zdDo4ODg4L2F1dGgiLCJuYmYiOjE1MTYyMzkwMjIsImZpcnN0bmFtZSI6Ik1vaGFtZWQiLCJsYXN0bmFtZSI6IllvdXNzZmkiLCJlbWFpbCI6InRlbmFuZ0BnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXX0.hWi2mzNCgVYGZDVLjSdeHuftb0uXO67MeVSPQ3TA_cQ"
 
+        }
+    ],
     "products": [{
             "id": 2,
             "names": "ordinateur",

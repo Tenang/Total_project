@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   formLogin!: FormGroup;
 
-  constructor(private fb: FormBuilder,private router: Router){
+  constructor(private fb: FormBuilder,private router: Router,private authService : AuthService){
 
   }
 
@@ -24,10 +25,19 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin(){
-    console.log(this.formLogin.value)
+    
+    let username = this.formLogin.value.username;
+    let password = this.formLogin.value.password;
 
-    if(this.formLogin.value.username="francis"&& this.formLogin.value.password=="12345"){
-      this.router.navigateByUrl('/admin')
-    }
+    this.authService.login(username,password).subscribe({
+      next: (user: any) =>{
+        let UserPassword = btoa(user.password);
+         if()
+        this.authService.authenticateUser(user)
+      },
+      error: err =>{
+        console.log(err)
+      }
+    })
   }
 }
